@@ -28,6 +28,7 @@ namespace OpenRA.Traits
 		List<Target> targets;
 		Color c;
 		int lifetime;
+        int previousFrame = 0;
 
 		public DrawLineToTarget(Actor self, DrawLineToTargetInfo info) { this.self = self; this.Info = info; }
 
@@ -51,8 +52,12 @@ namespace OpenRA.Traits
 
 		public void RenderAfterWorld(WorldRenderer wr)
 		{
-			var force = Game.GetModifierKeys().HasModifier(Modifiers.Alt);
-			if ((lifetime <= 0 || --lifetime <= 0) && !force)
+            if (wr.world.FrameNumber - previousFrame > 1)
+                lifetime = Info.Ticks;
+            previousFrame = wr.world.FrameNumber;
+
+            var force = Game.GetModifierKeys().HasModifier(Modifiers.Alt);
+            if ((lifetime <= 0 || --lifetime <= 0) && !force)
 				return;
 
 			if (targets == null || targets.Count == 0)
