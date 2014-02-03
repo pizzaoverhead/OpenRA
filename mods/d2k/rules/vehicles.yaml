@@ -24,7 +24,6 @@
 		Range: 8
 	MustBeDestroyed:
 	BaseBuilding:
-	-AttackMove:
 	Explodes:
 		Weapon: UnitExplodeScale
 		EmptyWeapon: UnitExplodeScale
@@ -80,7 +79,6 @@ HARVESTER:
 	Explodes:
 		Weapon: UnitExplodeScale
 		EmptyWeapon: UnitExplodeScale
-	-AttackMove:
 	LeavesHusk:
 		HuskActor: Harvester.Husk
 	WithHarvestAnimation:
@@ -93,6 +91,8 @@ HARVESTER.Husk:
 		Name: Destroyed Spice Harvester
 	RenderUnit:
 		Image: HARVESTER
+	TransformOnCapture:
+		IntoActor: harvester
 
 HARVESTER.starport:
 	Inherits: HARVESTER
@@ -289,6 +289,8 @@ SIEGETANK.Husk:
 		Anim: turret
 	RenderUnit:
 		Image: SIEGETANK
+	TransformOnCapture:
+		IntoActor: siegetank
 
 SIEGETANK.starport:
 	Inherits: SIEGETANK
@@ -340,6 +342,8 @@ MISSILETANK.Husk:
 	Inherits: ^Husk
 	RenderUnit:
 		Image: MISSILETANK
+	TransformOnCapture:
+		IntoActor: missiletank
 
 MISSILETANK.starport:
 	Inherits: MISSILETANK

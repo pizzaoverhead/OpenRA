@@ -116,6 +116,8 @@
 		EmptyWeapon: HeliExplode
 	CombatDebugOverlay:
 	AttackMove:
+	Guard:
+	Guardable:
 	BodyOrientation:
 	UpdatesPlayerStatistics:
 	Huntable:
@@ -209,7 +211,6 @@
 		NotifyAll: true
 	ScaredyCat:
 	RenderInfantryPanic:
-	AttackMove:
 	CrushableInfantry:
 
 ^DINO:
@@ -274,6 +275,7 @@
 	CombatDebugOverlay:
 	BodyOrientation:
 	Huntable:
+	AttackMove:
 	LuaScriptEvents:
 
 ^Ship:
@@ -515,6 +517,10 @@
 	Burns:
 		Interval: 2
 	TargetableUnit:
+	Capturable:
+		Type: husk
+		AllowAllies: yes
+		CaptureThreshold: 1.0
 	TransformOnCapture:
 		ForceHealthPercentage: 25
 	BelowUnits:
@@ -530,6 +536,7 @@
 		Moves: False
 		Explosion: HeliCrash
 	-BelowUnits:
+	-Capturable:
 	-TransformOnCapture:
 	-TargetableUnit:
 

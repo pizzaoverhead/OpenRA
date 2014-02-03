@@ -40,6 +40,7 @@ Rules:
 	mods/ra/rules/system-world.yaml
 	mods/ra/rules/defaults.yaml
 	mods/ra/rules/vehicles.yaml
+	mods/ra/rules/husks.yaml
 	mods/ra/rules/structures.yaml
 	mods/ra/rules/infantry.yaml
 	mods/ra/rules/civilian.yaml
@@ -125,7 +126,7 @@ Translations:
 LoadScreen: DefaultLoadScreen
 	Image: mods/ra/uibits/loadscreen.png
 	InstallerMenuWidget: INSTALL_PANEL
-	TestFile: redalert.mix
+	TestFiles: allies.mix, conquer.mix, general.mix, interior.mix, redalert.mix, russian.mix, scores.mix, snow.mix, sounds.mix, temperat.mix
 	PackageURL: http://open-ra.org/download/content/ra-packages
 	Text: Filling Crates..., Charging Capacitors..., Reticulating Splines..., Planting Trees..., Building Bridges..., Aging Empires..., Compiling EVA..., Constructing Pylons..., Activating Skynet..., Splitting Atoms...
 
