@@ -181,7 +181,8 @@ namespace OpenRA.Traits
 	public interface Requires<T> where T : class { }
 	public interface UsesInit<T> where T : IActorInit { }
 
-	public interface INotifySelection { void SelectionChanged(); }
+    public interface INotifySelected { void Selected(); }
+    public interface INotifySelection { void SelectionChanged(); }
 	public interface IWorldLoaded { void WorldLoaded(World w, WorldRenderer wr); }
 	public interface ICreatePlayers { void CreatePlayers(World w); }
 

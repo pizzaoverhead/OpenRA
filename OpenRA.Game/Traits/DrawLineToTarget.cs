@@ -21,7 +21,7 @@ namespace OpenRA.Traits
 		public virtual object Create(ActorInitializer init) { return new DrawLineToTarget(init.self, this); }
 	}
 
-	public class DrawLineToTarget : IPostRenderSelection
+	public class DrawLineToTarget : IPostRenderSelection, INotifySelected
 	{
 		Actor self;
 		DrawLineToTargetInfo Info;
@@ -49,6 +49,12 @@ namespace OpenRA.Traits
 			if (display)
 				lifetime = Info.Ticks;
 		}
+
+        public void Selected()
+        {
+            // Reset the order line timeout.
+            lifetime = Info.Ticks;
+        }
 
 		public void RenderAfterWorld(WorldRenderer wr)
 		{

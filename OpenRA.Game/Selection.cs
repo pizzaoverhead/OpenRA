@@ -21,7 +21,9 @@ namespace OpenRA
 		List<Actor> actors = new List<Actor>();
 		public void Add(World w, Actor a)
 		{
-			actors.Add(a);
+            actors.Add(a);
+            foreach (var sel in a.TraitsImplementing<INotifySelected>())
+                sel.Selected();
 			foreach (var ns in w.WorldActor.TraitsImplementing<INotifySelection>())
 				ns.SelectionChanged();
 		}
@@ -47,6 +49,11 @@ namespace OpenRA
 			if (voicedUnit != null)
 				Sound.PlayVoice("Select", voicedUnit, voicedUnit.Owner.Country.Race);
 
+            foreach (var a in newSelection)
+            {
+                foreach (var sel in a.TraitsImplementing<INotifySelected>())
+                    sel.Selected();
+            }
 			foreach (var ns in world.WorldActor.TraitsImplementing<INotifySelection>())
 				ns.SelectionChanged();
 		}
