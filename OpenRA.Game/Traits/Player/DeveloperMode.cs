@@ -13,6 +13,7 @@ namespace OpenRA.Traits
 	public class DeveloperModeInfo : ITraitInfo
 	{
 		public int Cash = 20000;
+		public int ResourceGrowth = 100;
 		public bool FastBuild = false;
 		public bool FastCharge = false;
 		public bool DisableShroud = false;
@@ -77,6 +78,14 @@ namespace OpenRA.Traits
 				case "DevGiveCash":
 					{
 						self.Trait<PlayerResources>().GiveCash(Info.Cash);
+						break;
+					}
+				case "DevGrowResources":
+					{
+						foreach (var a in self.World.ActorsWithTrait<ISeedableResource>())
+						{
+							a.Trait.Seed(a.Actor, Info.ResourceGrowth);
+						}
 						break;
 					}
 				case "DevShroudDisable":

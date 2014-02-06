@@ -3,7 +3,7 @@ Background@CHEATS_PANEL:
 	X:(WINDOW_RIGHT - WIDTH)/2
 	Y:(WINDOW_BOTTOM - HEIGHT)/2
 	Width:350
-	Height:475
+	Height:505
 	Visible:false
 	Children:
 		Label@LABEL_TITLE:
@@ -45,57 +45,64 @@ Background@CHEATS_PANEL:
 			Height:20
 			Text: Give $20000 Cash
 			Height:25
-		Checkbox@INSTANT_BUILD:
+		Button@GROW_RESOURCES:
 			X:30
 			Y:170
+			Width:150
+			Height:20
+			Text: Grow Resources
+			Height:25
+		Checkbox@INSTANT_BUILD:
+			X:30
+			Y:200
 			Width:PARENT_RIGHT - 30
 			Height:20
 			Text:Instant Build Speed
 		Checkbox@INSTANT_CHARGE:
 			X:30
-			Y:200
+			Y:230
 			Width:PARENT_RIGHT - 30
 			Height:20
 			Text:Support Powers Charge Instantly
 		Checkbox@ENABLE_TECH:
 			X:30
-			Y:230
+			Y:260
 			Width:PARENT_RIGHT - 30
 			Height:20
 			Text:Build Everything
 		Checkbox@UNLIMITED_POWER:
 			X:30
-			Y:260
+			Y:290
 			Width:PARENT_RIGHT - 30
 			Height:20
 			Text:Unlimited Power
 		Checkbox@BUILD_ANYWHERE:
 			X:30
-			Y:290
+			Y:320
 			Width:PARENT_RIGHT - 30
 			Height:20
 			Text:Build Anywhere
 		Checkbox@SHOW_ASTAR:
 			X:30
-			Y:320
+			Y:350
 			Width:PARENT_RIGHT - 30
 			Height:20
 			Text:Show A* Cost
 		Checkbox@SHOW_COMBATOVERLAY:
 			X:30
-			Y:350
+			Y:380
 			Height:20
 			Width:200
 			Text:Show Combat Geometry
 		Checkbox@SHOW_GEOMETRY:
 			X:30
-			Y:380
+			Y:420
 			Height:20
 			Width:200
 			Text:Show Render Geometry
 		Button@CLOSE:
 			X:30
-			Y:420
+			Y:460
 			Width:PARENT_RIGHT - 60
 			Height:25
 			Text:Close
